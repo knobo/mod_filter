@@ -3,23 +3,25 @@
 %%% Author  : Magnus Henoch <henoch@dtek.chalmers.se>
 %%% Purpose : flexible filtering by server policy
 %%% Created : 21 Sep 2005 by Magnus Henoch <henoch@dtek.chalmers.se>
-%%% Id      : $Id$
+%%% Updated : 02 Apr 2014 by Knut Olav Bøhmer <bohmer@gmail.com>
 %%%----------------------------------------------------------------------
 
 -module(mod_filter).
 -author('henoch@dtek.chalmers.se').
--vsn('$Revision$ ').
+%% -vsn('$Revision$ ').
 
 -behaviour(gen_mod).
 
 -export([start/2, stop/1,
 	 filter_packet/1]).
 
+-include("logger.hrl").
 -include("ejabberd.hrl").
 -include("jlib.hrl").
 
 start(_Host, _Opts) ->
     ejabberd_hooks:add(filter_packet, global, ?MODULE, filter_packet, 100).
+
 
 stop(_Host) ->
     ejabberd_hooks:delete(filter_packet, global, ?MODULE, filter_packet, 100).
@@ -44,13 +46,13 @@ filter_packet({From, To, Packet} = Input) ->
 	_ -> R
     end.
 
-check_stanza({_From, _To, {xmlelement, StanzaType, _, _}} = Input) ->
+check_stanza({_From, _To, #xmlel{name = StanzaType}} = Input) ->
     AccessRule = case StanzaType of
-		     "presence" ->
+		     <<"presence">> ->
 			 mod_filter_presence;
-		     "message" ->
+		     <<"message">> ->
 			 mod_filter_message;
-		     "iq" ->
+		     <<"iq">> ->
 			 mod_filter_iq
 		 end,
     check_stanza_type(AccessRule, Input).
