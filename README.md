@@ -1,3 +1,5 @@
+http://www.ejabberd.im/mod_filter
+
 mod_filter
 ==========
 
