@@ -9,7 +9,7 @@ This module allows the admin to specify packet filtering rules using ACL and ACC
 
 ## Install
 
-Download the updated mod_filter.erl from Bugzilla and copy to ejabberd/src.
+Clone it in ejabberd-contrib and run `./build.sh`
 
 Add the module to the list of modules on ejabberd.cfg:
 ```erlang
