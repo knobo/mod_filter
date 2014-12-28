@@ -15,6 +15,8 @@
 -export([start/2, stop/1,
 	 filter_packet/1]).
 
+-define(LAGER, 1).
+
 -include("logger.hrl").
 -include("ejabberd.hrl").
 -include("jlib.hrl").
