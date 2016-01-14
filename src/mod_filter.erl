@@ -3,7 +3,7 @@
 %%% Author  : Magnus Henoch <henoch@dtek.chalmers.se>
 %%% Purpose : flexible filtering by server policy
 %%% Created : 21 Sep 2005 by Magnus Henoch <henoch@dtek.chalmers.se>
-%%% Updated : 02 Apr 2014 by Knut Olav Bøhmer <bohmer@gmail.com>
+%%% Updated : 14 Jan 2016 by John Brodie <john@brodie.me>
 %%%----------------------------------------------------------------------
 
 -module(mod_filter).
@@ -14,8 +14,6 @@
 
 -export([start/2, stop/1,
 	 filter_packet/1]).
-
--define(LAGER, 1).
 
 -include("logger.hrl").
 -include("ejabberd.hrl").
