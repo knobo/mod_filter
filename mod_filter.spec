@@ -1,0 +1,5 @@
+author: "Magnus Henoch <anon at process-one.net>"
+category: "admin"
+summary: "ACLs for stanzas"
+home: "https://github.com/JohnBrodie/mod_filter"
+url: "git@github.com:JohnBrodie/mod_filter.git"
