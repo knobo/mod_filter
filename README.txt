@@ -9,6 +9,9 @@ This module allows the admin to specify packet filtering rules using ACL and ACC
 
 ## Install
 
+Clone into ~/.ejabberd-modules/sources and run `ejabberdctl module_install mod_filter`
+
+If you run into issues, first make sure the module shows up in the list of available modules via `ejabberdct modules_available`.  Next, check if `ejabberdctl module_check mod_filter` explains the problem.  It should say "OK" if the module is ready to install.
 
 Add the module to the list of modules on ejabberd.cfg:
 ```erlang
