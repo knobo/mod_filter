@@ -99,3 +99,9 @@ check_access({From, To, _Packet} = Input) ->
 		    {drop, receiver}
 	    end
     end.
+
+mod_opt_type(format) ->
+    fun (A) when is_atom(A) -> A end;
+
+mod_opt_type(_) ->
+    [path, format].
