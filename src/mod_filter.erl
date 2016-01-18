@@ -13,7 +13,7 @@
 -behaviour(gen_mod).
 
 -export([start/2, stop/1,
-	 filter_packet/1]).
+	 filter_packet/1, mod_opt_type/1]).
 
 -include("logger.hrl").
 -include("ejabberd.hrl").
