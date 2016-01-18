@@ -100,8 +100,8 @@ check_access({From, To, _Packet} = Input) ->
 	    end
     end.
 
-mod_opt_type(format) ->
+mod_opt_type(access) ->
     fun (A) when is_atom(A) -> A end;
 
 mod_opt_type(_) ->
-    [path, format].
+    [access].
