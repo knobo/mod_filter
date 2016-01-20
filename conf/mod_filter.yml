@@ -1,11 +1,9 @@
-modules:
+access:
   mod_filter:
-    access:
-      mod_filter:
-        allow: all
-      mod_filter_presence:
-        allow: all
-      mod_filter_message:
-        allow: all
-      mod_filter_iq:
-        allow: all
+    all: allow
+  mod_filter_iq:
+    all: allow
+  mod_filter_message:
+    all: allow
+  mod_filter_precense:
+    all: allow
